@@ -12,6 +12,7 @@ class TicTacToe
 		getPlayerChoice();
 		currentBoard();
                 userMove();
+                desiredMove();
 	}
 
 	 static void getBoard() //method for board
@@ -67,6 +68,21 @@ class TicTacToe
 	        //calling current board method
 	        currentBoard();
 	    }
+       static void desiredMove() //method for usermove to check free space
+       {
+	        System.out.print("\nSelect the Cell from 1 to 9 : ");
+	        int userChoice = scanner.nextInt();
+	        if (board[userChoice] != 'x' || board[userChoice] != 'o') 
+                {
+	            board[userChoice] = playerOption;
+	        }
+               else
+                {
+	            System.out.println("Invalid Cell");
+	        }
+	        currentBoard(); //calling current board 
+	       userMove();
+	 }
 }
 
 
